@@ -1,4 +1,2 @@
-#!/bin/bash/python3
-#This is a python script that prints "Programming is like building multilungual puzzle"
-print("Programming is like building a multilingual puzzle)
-
+#!/usr/bin/python3
+print("Programming is like building a multilingual puzzle.\nNew line")
