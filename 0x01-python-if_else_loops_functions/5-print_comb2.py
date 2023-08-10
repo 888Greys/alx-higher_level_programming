@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-#nice work
+"""
+hard work
+"""
 for number in range(0, 100):
 
     if number == 99:
