@@ -1,3 +1,2 @@
 #!/bin/bash/python3
-export PYCODE="$(cat 1-run_inline.py)"
 python3 $PYCODE
