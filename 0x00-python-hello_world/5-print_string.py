@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-str = "Alx Software engineering school"
-print(3 * str)
-print(str[:9])
-
+str = "Holberton School"
+print = ("str * 3")
+print = ("str[:10]")
+print = ("Successful")
