@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/bash/python3
 """ Prints the number of and the list of its arguments"""
 if __name__ == "__main__":
     import sys
@@ -13,4 +13,3 @@ if __name__ == "__main__":
     else:
         print("{} argument:".format(size))
         print("{}: {}".format(size, arg[1]))
-
