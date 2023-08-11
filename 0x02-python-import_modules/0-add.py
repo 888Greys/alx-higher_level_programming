@@ -1,11 +1,6 @@
 #!/usr/bin/python3
-import add_0
-
-def main():
-    a = 1
+if _name_ == "_main_":
+    from add_0 import add
     b = 2
-    result = add_0.add(a, b)
-    print("{} + {} = {}".format(a, b, result))
-
-if __name__ == "__main__":
-    main()
+    a = 1
+    print("{} + {} = {}".format(a, b, add(a, b)))
