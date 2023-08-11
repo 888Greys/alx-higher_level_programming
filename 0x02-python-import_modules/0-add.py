@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """Print the sum of 1 and 2."""
+    """The code that prints out the sum of one and three"""
     from add_0 import add
 
-    a = 1
     b = 2
-    print("{} + {} = {}".format(a, b, add(a, b)))
+    a = 1
+    print("{} + {} = {}".format(a, b, add(a, b, add(a, b)))
