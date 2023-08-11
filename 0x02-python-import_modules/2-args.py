@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 if __name__ == "__main__":
     """How to make a script dynamic! Print the number of and list of arguments."""
     import sys
