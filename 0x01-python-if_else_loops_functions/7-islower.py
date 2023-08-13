@@ -5,6 +5,7 @@ hard work
 working in the midnight
 """
 
+
 def islower(c):
     """Check for lowercase characters."""
     if ord(c) >= 97 and ord(c) <= 122:
