@@ -4,10 +4,10 @@ a code which switch the value of a and b
 """
 
 
-b = 10
-
 a = 89
 
-b, a = a, b
+b = 10
 
-print("b={:d} - a={:d}".format(b, a))
+a, b = b, a
+
+print("a={:d} - b={:d}".format(a, b))
