@@ -12,4 +12,4 @@ def divisible_by_2(my_list=[]):
         else:
             multiple.append(False)
 
-    return(multiple)
+    return (multiple)
