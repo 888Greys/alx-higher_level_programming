@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Defines class of a rectangle
+# 0-rectangle.py
 
 
 class Rectangle:
