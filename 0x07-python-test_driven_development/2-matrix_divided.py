@@ -1,17 +1,39 @@
 #!/usr/bin/python3
-# This functions divides all elements of a matrix
+# 2-matrix_divided.py
 
 
 def matrix_divided(matrix, div):
-    sizeErr = "Each row of the matrix must have the same size"
-    for x in matrix:
-        if len(x) != len(matrix[0]):
-            raise TypeError(sizeErr)
-        for y in x:
-            if not isinstance(y, (int, float)):
-                raise TypeError("matrix must be a matrix")
-    if not (isinstance(div, (int, float))):
+    """
+    Divide all elements of a matrix by a divisor.
+
+    Args:
+        matrix (list[list[int/float]]): A matrix
+        div (int/float): The divisor value.
+
+    Raises:
+        TypeError: If the matrix contains non-numeric elements.
+        ValueError: If the matrix contains rows of different
+        TypeError: If div is not an int or float.
+    ZeroDivisionError: If div is 0.
+
+    Returns:
+        list[list[int/float]]: A new matrix
+    """
+
+    if (not isinstance(matrix, list) or matrix == [] or
+            not all(isinstance(row, list) for row in matrix) or
+            not all((isinstance(ele, int) or isinstance(ele, float))
+                    for ele in [num for row in matrix for num in row])):
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
+
+    if not all(len(row) == len(matrix[0]) for row in matrix):
+        raise TypeError("Each row of the matrix must have the same size")
+
+    if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
+
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    return [[round(y / div, 2) for y in x] for x in matrix]
+
+    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
