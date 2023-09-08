@@ -1,5 +1,7 @@
+# 2-matrix_divided.txt
+
 ==============================
-Using 2-matrix_divided.py
+How to Use 2-matrix_divided.py
 ==============================
 
 This module defines a matrix division function ``matrix_divided(matrix, div)``.
@@ -14,19 +16,19 @@ Usage
 
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
     >>> matrix = [
-    ...     [3, 6, 9],
-    ...     [12, 15, 18]
+    ...     [22, 44, 66],
+    ...     [22, 55, 88]
     ... ]
     >>> print(matrix_divided(matrix, 3))
-    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+    [[11.0, 22.0, 33.0], [44.0, 55.0, 66.0]]
 
 Note that quotients are rounded to a maximum of two decimal places.
 
 ::
 
     >>> matrix = [
-    ...     [1, 2, 3],
-    ...     [4, 5, 6]
+    ...     [11, 22, 33],
+    ...     [44, 55, 66]
     ... ]
     >>> print(matrix_divided(matrix, 3))
     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
@@ -43,8 +45,8 @@ The function can also handle floating-point numbers.
 ::
 
     >>> matrix = [
-    ...     [1.1, -2.2, 3.3],
-    ...     [4.4, 5.5, -6.6]
+    ...     [11.1, -22.2, 33.3],
+    ...     [44.4, 55.5, -66.6]
     ... ]
     >>> print(matrix_divided(matrix, 3))
     [[0.37, -0.73, 1.1], [1.47, 1.83, -2.2]]
@@ -54,10 +56,10 @@ Integers and floats can be combined.
 ::
 
     >>> matrix = [
-    ...     [1, -2.2, 3, 4.4, 5],
-    ...     [-6.6, 7.00, 8, 9.999, 10]
+    ...     [13, -22.2, 33, 44.4, 55],
+    ...     [-66.6, 77.00, 88, 99.999, 10]
     ... ]
-    >>> print(matrix_divided(matrix, 3))
+    >>> print(matrix_divided(matrix, 33))
     [[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
 
 Invalid Matrices
@@ -69,14 +71,14 @@ floats. If ``matrix`` is not a list, a TypeError is raised.
 ::
 
     >>> matrix = "not a list"
-    >>> print(matrix_divided(matrix, 3))
+    >>> print(matrix_divided(matrix, 33))
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 ::
 
     >>> matrix = None
-    >>> print(matrix_divided(matrix, 3))
+    >>> print(matrix_divided(matrix, 33))
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -85,7 +87,7 @@ Note that an empty list will raise the TypeError.
 ::
 
     >>> matrix = []
-    >>> print(matrix_divided(matrix, 3))
+    >>> print(matrix_divided(matrix, 33))
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -94,7 +96,7 @@ But an empty list of lists will succeed.
 ::
 
     >>> matrix = [[]]
-    >>> print(matrix_divided(matrix, 3))
+    >>> print(matrix_divided(matrix, 33))
     [[]]
 
 An identical TypeError is raised if ``matrix`` is not specifically a list of
@@ -102,8 +104,8 @@ lists.
 
 ::
 
-    >>> matrix = [1, 2, 3]
-    >>> print(matrix_divided(matrix, 3))
+    >>> matrix = [11, 22, 33]
+    >>> print(matrix_divided(matrix, 33))
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -113,10 +115,10 @@ neither ints nor floats.
 ::
 
     >>> matrix = [
-    ...     [1, 2, 3],
-    ...     [4, "not a number", 6]
+    ...     [11, 22, 33],
+    ...     [44, "not a number", 66]
     ... ]
-    >>> print(matrix_divided(matrix, 3))
+    >>> print(matrix_divided(matrix, 33))
     Traceback (most recent call last):
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -127,10 +129,10 @@ of different sizes, a new TypeError is raised.
 ::
 
     >>> matrix = [
-    ...     [1, 2, 3, 4],
-    ...     [5, 6, 7]
+    ...     [11, 22, 33, 44],
+    ...     [55, 66, 77]
     ... ]
-    >>> print(matrix_divided(matrix, 3))
+    >>> print(matrix_divided(matrix, 33))
     Traceback (most recent call last):
     TypeError: Each row of the matrix must have the same size
 
@@ -143,8 +145,8 @@ is raised.
 ::
 
     >>> matrix = [
-    ...     [1, 2, 3],
-    ...     [4, 5, 6]
+    ...     [10, 20, 30],
+    ...     [40, 50, 60]
     ... ]
     >>> print(matrix_divided(matrix, "not a number"))
     Traceback (most recent call last):
