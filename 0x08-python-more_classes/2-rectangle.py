@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class that represents
-a rectangle.
+This script defines a Rectangle class that represents a
+rectangle.
 """
 
 
 class Rectangle:
     """
-    Represents a rectangle with width and height.
+    This class represents a rectangle with width and height
+    attributes.
 
     Attributes:
-        number_of_instances (int): A class attribute that
-        keeps track of the
-        number of Rectangle instances created.
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
 
     Methods:
         __init__(self, width=0, height=0): Initializes a new
@@ -23,15 +23,7 @@ class Rectangle:
         height (setter): Setter method for the height attribute.
         area(self): Calculates the area of the rectangle.
         perimeter(self): Calculates the perimeter of the rectangle.
-        __str__(self): Converts the rectangle to a string
-        representation.
-        __repr__(self): Returns a string representation of the
-        Rectangle object.
-        __del__(self): Destructor method to clean up and print
-        a message.
     """
-
-    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
@@ -43,7 +35,6 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -92,46 +83,21 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Calculate the area of the rectangle."""
+        """
+        Calculate the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
         return self.__width * self.__height
 
     def perimeter(self):
-        """Calculate the perimeter of the rectangle."""
-        return self.__width * 2 + self.__height * 2
-
-    def __str__(self):
         """
-        Convert the rectangle to a string representation
-        using # symbols.
+        Calculate the perimeter of the rectangle.
 
         Returns:
-            str: A string representation of the rectangle.
+            int: The perimeter of the rectangle.
         """
-        string = ""
         if self.__width == 0 or self.__height == 0:
-            string += "\n"
-            return string
-        for i in range(self.__height):
-            string += "#" * self.__width + "\n"
-        return string[:-1]
-
-    def __repr__(self):
-        """
-        Return a string representation of the Rectangle object.
-
-        Returns:
-            str: A string representation of the rectangle in
-            the format
-            "Rectangle(width, height)".
-        """
-        string = "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
-        return string
-
-    def __del__(self):
-        """
-        Destructor method to decrease the number_of_instances attribute
-        and print
-        a message.
-        """
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+            return 0
+        return self.__width * 2 + self.__height * 2
