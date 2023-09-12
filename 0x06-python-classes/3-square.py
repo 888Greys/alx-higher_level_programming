@@ -3,6 +3,9 @@
 
 
 class Square:
+    """
+    Defines what this code do
+    """
 
     def __init__(self, size=0):
         if not isinstance(size, int):
