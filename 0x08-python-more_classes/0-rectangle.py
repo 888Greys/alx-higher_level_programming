@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-# 0-rectangle.py
+"""
+defines a rectangle
+"""
 
 
 class Rectangle:
+    """
+    class of a rectangle
+    """
     pass
