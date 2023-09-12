@@ -3,6 +3,9 @@
 
 
 class Node:
+    """
+    class node that defines a node of a singly list
+    """
 
     def __init__(self, data, next_node=None):
         self.data = data
