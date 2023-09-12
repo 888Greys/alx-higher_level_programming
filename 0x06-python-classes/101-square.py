@@ -3,6 +3,9 @@
 
 
 class Square:
+    """
+    defines what its written
+    """
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
@@ -33,9 +36,15 @@ class Square:
         self.__position = value
 
     def area(self):
+        """
+        3rd last
+        """
         return (self.__size * self.__size)
 
     def my_print(self):
+        """
+        2rd last
+        """
         if self.__size == 0:
             print("")
             return
@@ -47,6 +56,9 @@ class Square:
             print("")
 
     def __str__(self):
+        """
+        last
+        """
         if self.__size != 0:
             [print("") for i in range(0, self.__position[1])]
         for i in range(0, self.__size):
