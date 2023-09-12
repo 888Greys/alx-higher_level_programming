@@ -3,6 +3,9 @@
 
 
 class Square:
+    """
+    defines a class square by 3
+    """
 
     def __init__(self, size=0):
         self.size = size
