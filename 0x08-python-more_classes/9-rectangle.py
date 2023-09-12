@@ -1,8 +1,13 @@
 #!/usr/bin/python3
-# 9-rectangle.py
-
+"""
+Write a class Rectangle that defines a rectangle
+by: (based on 8-rectangle.py)
+"""
 
 class Rectangle:
+    """
+    Defines a class rectangle
+    """
 
     number_of_instances = 0
     print_symbol = "#"
