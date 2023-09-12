@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class that represents a
-rectangle.
+This module defines a Rectangle class that represents
+a rectangle.
 """
 
 
@@ -20,8 +20,6 @@ class Rectangle:
         width (setter): Setter method for the width attribute.
         height (property): Getter method for the height attribute.
         height (setter): Setter method for the height attribute.
-        area(self): Calculates the area of the rectangle.
-        perimeter(self): Calculates the perimeter of the rectangle.
     """
 
     def __init__(self, width=0, height=0):
@@ -29,10 +27,8 @@ class Rectangle:
         Initializes a new Rectangle instance.
 
         Args:
-            width (int): The width of the rectangle.
-            Default is 0.
-            height (int): The height of the rectangle.
-            Default is 0.
+            width (int): The width of the rectangle. Default is 0.
+            height (int): The height of the rectangle. Default is 0.
         """
         self.width = width
         self.height = height
@@ -82,23 +78,3 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def area(self):
-        """
-        Calculate the area of the rectangle.
-
-        Returns:
-            int: The area of the rectangle.
-        """
-        return self.__width * self.__height
-
-    def perimeter(self):
-        """
-        Calculate the perimeter of the rectangle.
-
-        Returns:
-            int: The perimeter of the rectangle.
-        """
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        return self.__width * 2 + self.__height * 2
