@@ -9,22 +9,27 @@ class Student:
         """
         Initialize a Student object.
 
-        :param first_name: The first name
-        of the student.
-        :param last_name: The last name of
-        the student.
+        :param first_name: The first name of the
+        student.
+        :param last_name: The last name of the
+        student.
         :param age: The age of the student.
         """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """
-        Return a dictionary representation of
-        the Student object.
+        Return a dictionary representation of the
+        Student object.
 
-        :return: A dictionary representing
-        the Student object.
+        :param attrs: A list of attribute names
+        to include in
+        the dictionary (default is None).
+        :return: A dictionary representing the
+        Student object.
         """
-        return vars(self)
+        if attrs is None:
+            return vars(self)
+        return {attr: getattr(self, attr, None) for attr in attrs}
