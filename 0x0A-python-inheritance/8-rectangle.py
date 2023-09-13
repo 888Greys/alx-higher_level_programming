@@ -1,36 +1,15 @@
 #!/usr/bin/python3
 """
-Rectangle - A class representing a rectangle that
-inherits from BaseGeometry.
+class Rectangle that inherits BaseGeometry
 """
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """
-    Rectangle is a class representing a rectangle that
-    inherits from BaseGeometry.
-
-    It provides methods for initializing the dimensions of
-    the rectangle and for integer validation.
-
-    Attributes:
-        __width (int): The width of the rectangle.
-        __height (int): The height of the rectangle.
-    """
+    """ class Rectangle"""
     def __init__(self, width, height):
-        """
-        Initialize a Rectangle instance with the given width and height.
-
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
-
-        Raises:
-            TypeError: If width or height is not an integer.
-            ValueError: If width or height is not greater than 0.
-        """
+        """ initialize """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
