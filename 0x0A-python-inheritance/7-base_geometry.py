@@ -1,49 +1,40 @@
 #!/usr/bin/python3
 """
-BaseGeometry - A base class for geometry-related operations.
+This script demonstrates the use of the integer_validator
+method of the BaseGeometry class.
+
+Usage:
+    Execute this script to test the integer_validator
+    method with various input values.
 """
 
+# Import the BaseGeometry class from the '7-base_geometry' module
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-class BaseGeometry:
-    """
-    BaseGeometry is a base class for geometry-related operations.
+# Create an instance of the BaseGeometry class
+bg = BaseGeometry()
 
-    It provides methods for integer validation and serves
-    as a foundation for defining
-    more specialized geometry classes.
+# Test the integer_validator method with valid integers
+bg.integer_validator("my_int", 12)
+bg.integer_validator("width", 89)
 
-    Methods:
-        integer_validator(self, name, value): Validate that
-        a value is a positive integer.
-        area(self): Calculate the area of a geometric shape
-        (not implemented).
-    """
+try:
+    # Test the integer_validator method with a non-integer value
+    bg.integer_validator("name", "John")
+except Exception as e:
+    # Handle the exception and print an error message
+    print("[{}] {}".format(e.__class__.__name__, e))
 
-    def integer_validator(self, name, value):
-        """
-        integer_validator(self, name, value) - Validate that a
-        value is a positive integer.
+try:
+    # Test the integer_validator method with an integer less than or equal to 0
+    bg.integer_validator("age", 0)
+except Exception as e:
+    # Handle the exception and print an error message
+    print("[{}] {}".format(e.__class__.__name__, e))
 
-        Args:
-            name (str): The name of the value being validated.
-            value (int): The value to be validated.
-
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is not greater than 0.
-        """
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
-    def area(self):
-        """
-        area(self) - Calculate the area of a geometric shape
-        (not implemented).
-
-        Raises:
-            Exception: This method is not implemented and should
-            be overridden in subclasses.
-        """
-        raise Exception("area() is not implemented")
+try:
+    # Test the integer_validator method with a negative integer
+    bg.integer_validator("distance", -4)
+except Exception as e:
+    # Handle the exception and print an error message
+    print("[{}] {}".format(e.__class__.__name__, e))
