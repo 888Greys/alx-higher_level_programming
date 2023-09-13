@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
 class BaseGeometry
+almost cried trying this
 """
 
 
 class BaseGeometry:
-    """ class BaseGeometry"""
+    """ class BaseGeometry: I have done it"""
     def integer_validator(self, name, value):
         """ int validator """
         if not type(value) is int:
