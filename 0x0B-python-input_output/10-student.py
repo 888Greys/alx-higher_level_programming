@@ -5,6 +5,9 @@ This module defines a Student class.
 
 
 class Student:
+    """
+    whole
+    """
     def __init__(self, first_name, last_name, age):
         """
         Initialize a Student object.
