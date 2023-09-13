@@ -4,7 +4,6 @@ Rectangle - A class representing a rectangle that
 inherits from BaseGeometry.
 """
 
-# Import the BaseGeometry class from the '7-base_geometry' module
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
@@ -32,7 +31,6 @@ class Rectangle(BaseGeometry):
             TypeError: If width or height is not an integer.
             ValueError: If width or height is not greater than 0.
         """
-        # Validate and set the width and height attributes
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
