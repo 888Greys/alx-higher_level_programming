@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-# Importing necessary modules
 import json
 import turtle
 
