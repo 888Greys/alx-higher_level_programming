@@ -8,4 +8,7 @@ as a blueprint for defining rectangles in a program.
 
 
 class Rectangle:
+"""
+Class of Rectangle defined
+"""
     pass
