@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
 
-This Class Rectangle that defines a rectangle
+This is a Class Rectangle that defines a rectangle
 
 """
 
 
 class Rectangle:
     """
-    It Creates Rectangle class
+    Creating a  Rectangle class
     """
     def __init__(self, width=0, height=0):
         """
@@ -20,14 +20,14 @@ class Rectangle:
     @property
     def width(self):
         """
-        returns width value
+        returns width value of that
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        sets width value
+        sets th width value
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -52,3 +52,17 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """
+        method to get area
+        """
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """
+        method to get perimeter
+        """
+        if self.width == 0 or self.height == 0:
+            return 0
+        return self.width * 2 + self.height * 2
