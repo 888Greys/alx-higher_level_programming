@@ -1,4 +1,4 @@
-Test for 1-my_list.py
+Test for 1-my_list.py by Kipronoh
 -------------------------------------------
 
 case 0: import
