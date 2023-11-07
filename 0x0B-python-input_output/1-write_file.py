@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-"""
-Program that counts  the  lines of code in a file
-"""
+"""A Python function for writing text to a file."""
 
 
-def number_of_lines(filename="an.py"):
-    """ it counts the lines in file """
-    count = 0
-    if filename == "":
-        return count
-    with open(filename, "r") as f:
-        for line in f:
-            count += 1
-    return count
+def write_file(filename="", text=""):
+    """Write a string to a UTF-8 text file.
+
+    Args:
+        filename (str): The name of the file to write.
+        text (str): The text to write to the file.
+
+    Returns:
+        int: The number of characters written.
+    """
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
