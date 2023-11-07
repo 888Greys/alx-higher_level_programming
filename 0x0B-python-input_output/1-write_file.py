@@ -10,6 +10,6 @@ def number_of_lines(filename="an.py"):
     if filename == "":
         return count
     with open(filename, "r") as f:
-        for i in f:
+        for line in f:
             count += 1
     return count
