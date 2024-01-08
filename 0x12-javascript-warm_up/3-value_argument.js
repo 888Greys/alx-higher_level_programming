@@ -1,4 +1,3 @@
-#1/usr/bin/node
-// Am trying
-
+#!/usr/bin/node
+// am tryng 
 console.log(process.argv[2] ? process.argv[2] : 'No argument');
