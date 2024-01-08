@@ -1,2 +1,5 @@
-#!/usr/bin/node 
-console.log(process.argv[2] ? process.argv[2] : 'No argument');
+#!/usr/bin/node
+
+const first = 'No argument';
+
+console.log(process.argv[2] || first);
