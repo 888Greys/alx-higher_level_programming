@@ -5,7 +5,9 @@
 
 
 exports.converter = function (base) {
-  return function (x) {
-    return x.toString(base);
+  function myConverter (n) {
+    return n.toString(base);
   }
+
+  return myConverter;
 };
