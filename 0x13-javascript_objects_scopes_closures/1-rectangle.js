@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// 1-Rectangle
 
 class Rectangle {
 	constructor (w, h) {
