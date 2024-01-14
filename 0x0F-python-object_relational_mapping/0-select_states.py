@@ -17,7 +17,7 @@ if __name__ == '__main__':
     database_connect = MySQLdb.connect(host="localhost", username=argv[1], port=3306, 
             password=argv[2], db_name=argv[3])
 
-    database_cursor = database_cursor()
+    database_cursor = database_connect.cursor()
     database_cursor.execute("SELECT * FROM states")
 
     row_selected = database_cursor.fetchall()
