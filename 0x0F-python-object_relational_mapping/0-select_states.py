@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 
-"
+"""
 This Script lists all the states from the database
 hbtn_0e_0_usa
-"
+"""
 
 import MySQLdb
 from sys import argv
 
 if __name__ == '__main__':
 
-    "
+    """
     Accesses the database and gets the states from the database
-    "
+    """
 
     database_connect = MySQLdb.connect(host="localhost", username=argv[1], port=3306, 
             password=argv[2], db_name=argv[3])
