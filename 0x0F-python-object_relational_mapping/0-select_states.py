@@ -20,3 +20,5 @@ if __name__ == "__main__":
     database_cursor = database_connect.cursor()
     database_cursor.execute("SELECT * FROM `states`")
     [print(state) for state in database_cursor.fetchall()]
+    database_cursor.close()
+    database_connect.close()
