@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script lists all State objects
-from the database `hbtn_0e_6_usa`.
+script that lists all State objects
+from the database hbtn_0e_6_usa
 """
 
 from sys import argv
@@ -11,8 +11,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access to the database and get the states
-    from the database.
+    script that lists all State objects
+    from the database hbtn_0e_6_usa
     """
 
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
 
-    session = Session()
+    session_1 = Session()
 
-    for instance in session.query(State).order_by(State.id):
+    for instance in session_1.query(State).order_by(State.id):
         print('{0}: {1}'.format(instance.id, instance.name))
