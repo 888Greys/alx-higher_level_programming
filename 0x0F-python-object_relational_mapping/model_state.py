@@ -1,19 +1,23 @@
 #!/usr/bin/python3
 """
-python file that contains the class definition
-of a State and an instance Base = declarative_base():
+This script defines a City class
+to work with MySQLAlchemy ORM.
 """
-import sys
 from model_state import Base, State
+from sqlalchemy import Column, Integer, String, ForeignKey
 
-from sqlalchemy import (create_engine)
 
-"""
-This is it
-"""
+class City(Base):
+    """City class
+    Attributes:
+        __tablename__ (str): The table name of the class
+        id (int): The id of the class
+        name (str): The name of the class
+        state_id (int): The state the city belongs to
+    """
 
-if __name__ == "__main__":
-    engine_no1 = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'.format(
-            sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine_no1)
+    __tablename__ = 'cities'
+
+    id = Column(Integer, primary_key=True)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    name = Column(String(128), nullable=False)
