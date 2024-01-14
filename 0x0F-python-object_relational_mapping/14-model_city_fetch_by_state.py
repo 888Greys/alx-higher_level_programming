@@ -1,18 +1,19 @@
 #!/usr/bin/python3
 """
-script that deletes all State objects with a name
-containing the letter a from the database hbtn_0e_6_usa
+Python file similar to model_state.py named
+model_city.py that contains the class definition of a City.
 """
 
 from sys import argv
 from model_state import State, Base
+from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    script that deletes all State objects with a name
-    containing the letter a from the database hbtn_0e_6_usa
+    Python file similar to model_state.py named
+    model_city.py that contains the class definition of a City.
     """
 
     database_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
@@ -23,11 +24,10 @@ if __name__ == "__main__":
 
     session_1 = Session()
 
-    states_1 = session_1.query(State).filter(State.name.contains('a'))
-    if states_1 is not None:
-        for state in states_1:
-            session_1.delete(state)
+    results_1 = session_1.query(City, State).join(State)
+
+    for city, state in results_1.all():
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     session_1.commit()
-
     session_1.close()
