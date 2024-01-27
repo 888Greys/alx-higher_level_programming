@@ -1,11 +1,11 @@
 #!/usr/bin/python3
+"""Python script that takes your GitHub credentials
+(username and password) and uses the GitHub API to display your id
 """
-Python script that takes your GitHub credentials
-(username and password) and uses the GitHub API to display your 
-"""
+import sys
 import requests
+from requests.auth import HTTPBasicAuth
 if __name__ == "__main__":
-    r = requests.get("https://alx-intranet.hbtn.io/status")
-    print("Body response:")
-    print("\t- type: {}".format(type(r.text)))
-    print("\t- content: {}".format(r.text))
+    auth = HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    r = requests.get("https://api.github.com/user", auth=auth)
+    print(r.json().get("id"))
