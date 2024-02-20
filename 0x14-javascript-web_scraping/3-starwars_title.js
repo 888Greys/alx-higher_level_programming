@@ -1,28 +1,14 @@
 #!/usr/bin/node
-
+//Another code 3
 const request = require('request');
-const argv = process.argv;
-const url = 'http://swapi.co/api/films/';
+const movieId = process.argv[2];
+const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-function getStatusJson (theUrl) {
-  const options = {
-    url: theUrl,
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Accept-Charset': 'utf-8'
-    }
-  };
-  request(options, function (err, res, body) {
-    if (err) {
-      console.log(err);
-    } else {
-      const json = JSON.parse(body);
-      const status = res.statusCode;
-      console.log(json.title);
-      return (status, json);
-    }
-  });
-}
-
-getStatusJson(url + argv[2]);
+request.get(url, (error, response, body) => {
+  if (error) {
+    console.log(error);
+  } else {
+    const data = JSON.parse(body);
+    console.log(data.title);
+  }
+});
